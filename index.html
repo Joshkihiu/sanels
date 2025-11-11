@@ -76,6 +76,7 @@ body.dark-theme {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* ⬅️ ADDED THIS */
 }
 
 body {
@@ -84,8 +85,9 @@ body {
     line-height: 1.6;
     background-color: var(--bg-primary);
     transition: var(--transition);
+    overflow-x: hidden; /* ⬅️ ADDED THIS */
+    width: 100%; /* ⬅️ ADDED THIS */
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
