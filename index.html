@@ -76,7 +76,7 @@ body.dark-theme {
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden; /* ⬅️ ADDED THIS */
+    overflow-x: hidden; 
 }
 
 body {
@@ -85,8 +85,8 @@ body {
     line-height: 1.6;
     background-color: var(--bg-primary);
     transition: var(--transition);
-    overflow-x: hidden; /* ⬅️ ADDED THIS */
-    width: 100%; /* ⬅️ ADDED THIS */
+    overflow-x: hidden; 
+    width: 100%; 
 }
 .container {
     max-width: 1200px;
@@ -103,15 +103,15 @@ body {
     top: 0;
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-color);
-    z-index: 999; /* ⬅️ CHANGED: from 99 to 999 */
+    z-index: 999; 
     box-shadow: 0 2px 8px var(--shadow);
     transition: var(--transition);
 }
 
 .dark-theme .navbar {
-    background: rgba(26, 26, 26, 0.98); /* ⬅️ CHANGED: from 0.95 to 0.98 */
+    background: rgba(26, 26, 26, 0.98); 
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--dark-border); /* ⬅️ CHANGED: from none to border */
+    border-bottom: 1px solid var(--dark-border); 
 }
 
 .nav-wrapper {
@@ -119,29 +119,29 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0.6rem 0;
-    flex-wrap: nowrap; /* ⬅️ ADDED: prevents wrapping */
+    flex-wrap: nowrap; 
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    z-index: 1000; /* ⬅️ ADDED: ensures logo stays on top */
-    flex-shrink: 0; /* ⬅️ ADDED: prevents logo from shrinking */
+    z-index: 1000; 
+    flex-shrink: 0; 
 }
 
 .logo h1 {
-    font-size: 1.2rem; /* ⬅️ ADDED: explicit font size */
-    font-weight: 700; /* ⬅️ ADDED: font weight */
-    color: var(--text-primary); /* ⬅️ ADDED: text color */
-    white-space: nowrap; /* ⬅️ ADDED: prevents text wrapping */
+    font-size: 1.2rem; 
+    font-weight: 700; 
+    color: var(--text-primary); 
+    white-space: nowrap; 
 }
 
 .logo-image {
     width: 32px;
     height: 32px;
     object-fit: contain;
-    flex-shrink: 0; /* ⬅️ ADDED: prevents image from shrinking */
+    flex-shrink: 0; 
 }
 
 .logo-light {
@@ -164,7 +164,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    flex-shrink: 0; /* ⬅️ ADDED: prevents nav-right from shrinking */
+    flex-shrink: 0; 
 }
 
 .nav-menu {
@@ -220,7 +220,7 @@ body {
     padding: 0.3rem 0.5rem;
     cursor: pointer;
     transition: var(--transition);
-    flex-shrink: 0; /* ⬅️ ADDED: prevents theme toggle from shrinking */
+    flex-shrink: 0; 
 }
 
 .theme-toggle-header:hover {
@@ -265,7 +265,7 @@ body {
     cursor: pointer;
     flex-direction: column;
     gap: 3px;
-    flex-shrink: 0; /* ⬅️ ADDED: prevents menu toggle from shrinking */
+    flex-shrink: 0;
 }
 
 .mobile-menu-toggle span {
