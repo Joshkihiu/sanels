@@ -1,0 +1,2505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanel Systems Limited - Business Solutions for East Africa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/logo4.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+/* ============================================
+   SANEL SYSTEMS - LUXURY DARK/LIGHT THEME
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Light Theme Colors */
+    --light-bg: #ffffff;
+    --light-bg-secondary: #f8fafc;
+    --light-text: #1f2937;
+    --light-text-secondary: #64748b;
+    --light-border: #e2e8f0;
+    
+    /* Dark Theme Colors - Luxurious */
+    --dark-bg: #0a0a0a;
+    --dark-bg-secondary: #1a1a1a;
+    --dark-bg-card: #151515;
+    --dark-text: #f5f5f5;
+    --dark-text-secondary: #b8b8b8;
+    --dark-border: #2a2a2a;
+    
+    /* Luxury Accent Colors */
+    --gold: #d4af37;
+    --gold-dark: #b8941f;
+    --gold-light: #f0d974;
+    --deep-blue: #1a237e;
+    --royal-purple: #4a148c;
+    --emerald: #004d40;
+    
+    /* Common Colors */
+    --accent-primary: #1e40af;
+    --accent-secondary: #3b82f6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme (Default) */
+body {
+    --bg-primary: var(--light-bg);
+    --bg-secondary: var(--light-bg-secondary);
+    --bg-card: var(--light-bg);
+    --text-primary: var(--light-text);
+    --text-secondary: var(--light-text-secondary);
+    --border-color: var(--light-border);
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --bg-primary: var(--dark-bg);
+    --bg-secondary: var(--dark-bg-secondary);
+    --bg-card: var(--dark-bg-card);
+    --text-primary: var(--dark-text);
+    --text-secondary: var(--dark-text-secondary);
+    --border-color: var(--dark-border);
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+    background-color: var(--bg-primary);
+    transition: var(--transition);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ============================================
+   NAVIGATION WITH THEME TOGGLE
+   ============================================ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 99;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: var(--transition);
+}
+
+.dark-theme .navbar {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: none;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-image {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.logo-light {
+    display: block;
+}
+
+.logo-dark {
+    display: none;
+}
+
+.dark-theme .logo-light {
+    display: none;
+}
+
+.dark-theme .logo-dark {
+    display: block;
+}
+
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-primary);
+}
+
+.dark-theme .nav-menu a:hover {
+    color: var(--gold);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-primary);
+    transition: var(--transition);
+}
+
+.dark-theme .nav-menu a::after {
+    background: var(--gold);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Theme Toggle in Header */
+.theme-toggle-header {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-toggle-header:hover {
+    transform: scale(1.05);
+}
+
+.dark-theme .theme-toggle-header {
+    background: var(--dark-bg-card);
+    border-color: var(--gold);
+}
+
+.theme-icon {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.dark-theme .theme-icon {
+    color: var(--gold);
+}
+
+.theme-toggle-header .sun-icon {
+    display: none;
+}
+
+.theme-toggle-header .moon-icon {
+    display: block;
+}
+
+.dark-theme .theme-toggle-header .sun-icon {
+    display: block;
+}
+
+.dark-theme .theme-toggle-header .moon-icon {
+    display: none;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.mobile-menu-toggle span {
+    width: 20px;
+    height: 2.5px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    color: white;
+}
+
+.dark-theme .btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--dark-bg);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px var(--shadow);
+}
+
+/* ============================================
+   HERO SECTION - FULL HEIGHT
+   ============================================ */
+
+.hero {
+    position: relative;
+    padding: 0;
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80') center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.dark-theme .hero {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.92) 0%, rgba(26, 26, 26, 0.88) 100%),
+                url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80') center/cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+.dark-theme .hero-title {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    padding: 1.2rem 0.8rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: var(--transition);
+}
+
+.dark-theme .stat-card {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-5px);
+}
+
+.dark-theme .stat-card:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--gold);
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.dark-theme .stat-card h3 {
+    color: var(--gold);
+}
+
+.stat-card p {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+.about {
+    padding: 50px 0;
+    background-color: var(--bg-secondary);
+    transition: var(--transition);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.dark-theme .section-title {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background: var(--accent-primary);
+    border-radius: 2px;
+}
+
+.dark-theme .section-title::after {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.about-text h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-text p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+}
+
+.vision-mission {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.vm-card {
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border-left: 3px solid var(--accent-primary);
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: var(--transition);
+}
+
+.dark-theme .vm-card {
+    border-left-color: var(--gold);
+    background: var(--dark-bg-card);
+}
+
+.vm-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px var(--shadow);
+}
+
+.vm-card h4 {
+    color: var(--accent-primary);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.dark-theme .vm-card h4 {
+    color: var(--gold);
+}
+
+.vm-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   GEOGRAPHIC REACH - 2x2 GRID ON MOBILE
+   ============================================ */
+
+.about-reach h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.locations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.location-card {
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 2px 6px var(--shadow);
+}
+
+.location-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-3px);
+}
+
+.dark-theme .location-card:hover {
+    border-color: var(--gold);
+}
+
+.location-card.active {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.dark-theme .location-card.active {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    border-color: var(--gold);
+}
+
+.location-card.expanding {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: white;
+}
+
+.location-card i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.location-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.location-card p {
+    font-size: 0.75rem;
+    opacity: 0.85;
+}
+
+/* ============================================
+   SERVICES - MOBILE COMPACT, DESKTOP EXPANDED
+   ============================================ */
+
+.services {
+    padding: 50px 0;
+    background-color: var(--bg-primary);
+}
+
+/* Mobile: Ultra Compact Grid */
+.services-all-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+.service-card-compact {
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 2px 6px var(--shadow);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.service-card-compact:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+.dark-theme .service-card-compact:hover {
+    border-color: var(--gold);
+}
+
+.service-icon-compact {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.dark-theme .service-icon-compact {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--dark-bg);
+}
+
+.service-content-compact {
+    flex: 1;
+}
+
+.service-card-compact h4 {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+}
+
+.service-card-compact p {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+/* Desktop: Expanded Cards with Categories */
+.service-category {
+    display: none;
+    margin-bottom: 3rem;
+}
+
+.category-header {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.dark-theme .category-header {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+}
+
+.category-header h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.category-header i {
+    font-size: 1.5rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.service-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow);
+}
+
+.dark-theme .service-card:hover {
+    border-color: var(--gold);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.dark-theme .service-icon {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--dark-bg);
+}
+
+.service-card h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   EXPERTISE SECTION
+   ============================================ */
+
+.expertise {
+    padding: 50px 0;
+    background-color: var(--bg-secondary);
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.expertise-column h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.dark-theme .expertise-column h3 {
+    color: var(--gold);
+}
+
+.expertise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.expertise-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.7rem;
+    background: var(--bg-card);
+    border-radius: 0.5rem;
+    border-left: 3px solid var(--success);
+    transition: var(--transition);
+    box-shadow: 0 2px 6px var(--shadow);
+}
+
+.dark-theme .expertise-item {
+    border-left-color: var(--gold);
+}
+
+.expertise-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.expertise-item i {
+    color: var(--success);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.dark-theme .expertise-item i {
+    color: var(--gold);
+}
+
+.expertise-item span {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   PARTNERS - ORIGINAL DRAG/SWIPE CAROUSEL
+   ============================================ */
+
+.partners {
+    padding: 50px 0;
+    background: var(--bg-primary);
+    overflow: hidden;
+}
+
+.carousel-container {
+    perspective: 1000px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 40px 0;
+    touch-action: pan-y;
+}
+
+.carousel-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.carousel-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    top: 0;
+    left: 0;
+}
+
+.partner-item {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    margin-left: -75px;
+    margin-top: -100px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: grab;
+    user-select: none;
+}
+
+.partner-item.dragging {
+    transition: none;
+    cursor: grabbing;
+}
+
+.partner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: stretch;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.6s ease;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+.dark-theme .partner-item img {
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+}
+
+.partner-item:hover img {
+    box-shadow: 0 20px 60px rgba(30, 64, 175, 0.4);
+    border-color: var(--accent-primary);
+}
+
+.dark-theme .partner-item:hover img {
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.5);
+    border-color: var(--gold-light);
+}
+
+.partner-item.active img {
+    box-shadow: 0 25px 70px rgba(30, 64, 175, 0.5);
+    border-color: var(--accent-primary);
+    filter: brightness(1.1);
+}
+
+.dark-theme .partner-item.active img {
+    box-shadow: 0 25px 70px rgba(212, 175, 55, 0.6);
+    border-color: var(--gold-light);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.6rem;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.indicator.active {
+    background: var(--accent-primary);
+    width: 24px;
+    border-radius: 4px;
+    border-color: var(--accent-primary);
+}
+
+.dark-theme .indicator.active {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.swipe-hint {
+    position: absolute;
+    bottom: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    opacity: 0.7;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* ============================================
+   CONTACT SECTION - CLEAN EMAIL ONLY
+   ============================================ */
+
+.contact {
+    padding: 50px 0;
+    background: linear-gradient(135deg, var(--deep-blue) 0%, var(--accent-primary) 100%);
+    color: white;
+}
+
+.dark-theme .contact {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-secondary) 100%);
+}
+
+.contact-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.95;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.dark-theme .info-card {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.info-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.dark-theme .info-card:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--gold);
+}
+
+.info-card i {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+}
+
+.dark-theme .info-card i {
+    color: var(--gold);
+}
+
+.info-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+.info-card a,
+.info-card p {
+    opacity: 0.9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.info-card a {
+    cursor: pointer;
+}
+
+.info-card a:hover {
+    opacity: 1;
+    color: var(--gold-light);
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.dark-theme .contact-form {
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    padding: 0.65rem 0.9rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: var(--transition);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--deep-blue);
+}
+
+.dark-theme .form-input {
+    background-color: var(--dark-bg-card);
+    color: var(--dark-text);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.dark-theme .form-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.form-input::placeholder {
+    color: #7e8ea3;
+}
+
+.dark-theme .form-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.form-note {
+    text-align: center;
+    color: var(--success);
+    font-size: 0.85rem;
+    margin-top: -0.3rem;
+    display: none;
+}
+
+.form-note.success {
+    display: block;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background-color: var(--deep-blue);
+    color: white;
+    padding: 2rem 0 1rem;
+}
+
+.dark-theme .footer {
+    background-color: var(--dark-bg);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.dark-theme .footer-section h4 {
+    color: var(--gold);
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-section ul a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.85rem;
+}
+
+.footer-section ul a:hover {
+    color: white;
+}
+
+.dark-theme .footer-section ul a:hover {
+    color: var(--gold);
+}
+
+.social-links {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background: var(--accent-primary);
+    transform: translateY(-3px);
+}
+
+.dark-theme .social-link:hover {
+    background: var(--gold);
+    color: var(--dark-bg);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (min-width: 768px) {
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 2.3rem;
+    }
+
+    .section-title {
+        font-size: 2.3rem;
+    }
+
+    .about {
+        padding: 80px 0;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .about-text h3 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1.05rem;
+    }
+
+    .vm-card {
+        padding: 1.5rem;
+    }
+
+    .vm-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .vm-card p {
+        font-size: 0.95rem;
+    }
+
+    .locations {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .services {
+        padding: 80px 0;
+    }
+
+    /* Desktop: Show categorized services */
+    .services-all-grid {
+        display: none;
+    }
+
+    .service-category {
+        display: block;
+    }
+
+    .expertise {
+        padding: 80px 0;
+    }
+
+    .expertise-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    .expertise-column h3 {
+        font-size: 1.5rem;
+    }
+
+    .expertise-item {
+        padding: 1rem;
+    }
+
+    .expertise-item i {
+        font-size: 1.25rem;
+    }
+
+    .expertise-item span {
+        font-size: 1rem;
+    }
+
+    .partners {
+        padding: 80px 0;
+    }
+
+    .carousel-container {
+        height: 400px;
+    }
+
+    .partner-item {
+        width: 180px;
+        height: 240px;
+        margin-left: -90px;
+        margin-top: -120px;
+    }
+
+    .contact {
+        padding: 80px 0;
+    }
+
+    .contact-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 2.5rem;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+        padding: 2rem;
+    }
+
+    .form-group:nth-child(4),
+    .form-group:nth-child(5) {
+        grid-column: span 2;
+    }
+
+    .form-group button {
+        grid-column: span 2;
+    }
+
+    .form-note {
+        grid-column: span 2;
+    }
+
+    .info-card {
+        padding: 2rem;
+    }
+
+    .info-card i {
+        font-size: 1.75rem;
+    }
+
+    .info-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .footer {
+        padding: 3rem 0 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel-container {
+        height: 450px;
+    }
+
+    .partner-item {
+        width: 220px;
+        height: 280px;
+        margin-left: -110px;
+        margin-top: -140px;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        background: var(--bg-card);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 4px 6px var(--shadow);
+    }
+
+    .dark-theme .nav-menu {
+        background: var(--dark-bg-secondary);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.9rem;
+        font-size: 0.9rem;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .carousel-container {
+        height: 280px;
+    }
+
+    .partner-item {
+        width: 130px;
+        height: 180px;
+        margin-left: -65px;
+        margin-top: -90px;
+    }
+
+    .carousel-indicators {
+        bottom: -40px;
+    }
+
+    .swipe-hint {
+        bottom: -60px;
+        font-size: 0.75rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation with Theme Toggle -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                  <img src="images/logo6.jpg" alt="Sanel Systems Logo" class="logo-image logo-light">
+                  <img src="images/logo-dark.jpg" alt="Sanel Systems Logo" class="logo-image logo-dark">
+                  <h1>Sanel Systems</h1>
+             </div>
+
+
+                <div class="nav-right">
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+
+                    <div class="theme-toggle-header" id="themeToggle">
+                        <i class="fas fa-sun theme-icon sun-icon"></i>
+                        <i class="fas fa-moon theme-icon moon-icon"></i>
+                    </div>
+
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Full Height -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">Business Solutions for East Africa</h1>
+                <p class="hero-subtitle">Comprehensive IT Support, Systems Consultancy & Financial Advisory Services</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <h3>4+</h3>
+                        <p>Countries Served</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <p>Client Satisfaction</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>24/7</h3>
+                        <p>Support Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Sanel Systems</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Leading Provider of Comprehensive Business Solutions</h3>
+                    <p>Sanel Systems Limited is a trusted partner for businesses across East Africa. We specialize in delivering innovative and integrated solutions that empower organizations to optimize operations and achieve sustainable growth.</p>
+                    
+                    <div class="vision-mission">
+                        <div class="vm-card">
+                            <h4><i class="fas fa-eye"></i> Our Vision</h4>
+                            <p>To be the preferred provider of business solutions in East Africa through innovative and integrated services.</p>
+                        </div>
+                        <div class="vm-card">
+                            <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                            <p>Deliver high-quality, cost-effective, customized solutions that drive growth and improve operational efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-reach">
+                    <h3>Geographic Reach</h3>
+                    <div class="locations">
+                        <div class="location-card active">
+                            <i class="fas fa-building"></i>
+                            <h4>Kenya</h4>
+                            <p>Headquarters</p>
+                        </div>
+                        <div class="location-card">
+                            <i class="fas fa-globe"></i>
+                            <h4>Uganda</h4>
+                            <p>Active Operations</p>
+                        </div>
+                        <div class="location-card">
+                            <i class="fas fa-globe"></i>
+                            <h4>Tanzania</h4>
+                            <p>Active Operations</p>
+                        </div>
+                        <div class="location-card">
+                            <i class="fas fa-globe"></i>
+                            <h4>Ethiopia</h4>
+                            <p>Active Operations</p>
+                        </div>
+                        <div class="location-card expanding">
+                            <i class="fas fa-rocket"></i>
+                            <h4>Rwanda</h4>
+                            <p>Expanding Soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - Mobile Compact, Desktop Expanded -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            
+            <!-- Mobile: Compact Grid (All Services Together) -->
+            <div class="services-all-grid">
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>PMS Systems Support</h4>
+                        <p>Expert Property Management</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Sun Financials</h4>
+                        <p>Financial systems support</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Inventory Systems</h4>
+                        <p>Efficient management</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>POS Systems</h4>
+                        <p>Point of Sale support</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Integration</h4>
+                        <p>Seamless interfaces</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Server Config</h4>
+                        <p>Backend setup</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>24/7 Support</h4>
+                        <p>Rapid assistance</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Bookkeeping</h4>
+                        <p>Financial reporting</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Hospitality</h4>
+                        <p>Hotels & resorts</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Restaurants</h4>
+                        <p>Food service systems</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>ERP Systems</h4>
+                        <p>Enterprise planning</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Financial Planning</h4>
+                        <p>Strategic growth</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Risk Management</h4>
+                        <p>Assessment & mitigation</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Budgeting</h4>
+                        <p>Financial forecasting</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Cashflow</h4>
+                        <p>Planning strategies</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Internal Control</h4>
+                        <p>System reviews</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>Fraud Detection</h4>
+                        <p>Prevention systems</p>
+                    </div>
+                </div>
+
+                <div class="service-card-compact">
+                    <div class="service-icon-compact">
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <div class="service-content-compact">
+                        <h4>SOP Review</h4>
+                        <p>Workflow optimization</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop: Categorized Services -->
+            <div class="service-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-server"></i> IT Support & Maintenance</h3>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>PMS Systems Support</h4>
+                        <p>Expert management and maintenance of Property Management Systems</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h4>Sun Financials & Business Support</h4>
+                        <p>Comprehensive support for financial systems and business operations</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h4>Inventory System Support</h4>
+                        <p>Efficient management and optimization of inventory operations</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h4>POS System Support</h4>
+                        <p>Point of Sale system maintenance and technical support</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h4>Systems Interface & Integrations</h4>
+                        <p>Seamless integration of multiple business systems</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4>Backend Server Configuration</h4>
+                        <p>Robust server setup and maintenance services</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Rapid Online Support</h4>
+                        <p>Quick offsite online support available 24/7</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>Professional Bookkeeping (PBO)</h4>
+                        <p>Accurate bookkeeping, financial reporting & tax assistance</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-lightbulb"></i> Systems Consultancy</h3>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>Commercial Companies</h4>
+                        <p>Tailored solutions for commercial business operations</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h4>Hospitality Solutions</h4>
+                        <p>Hotels, resorts & accommodation management systems</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>Restaurants & Cafés</h4>
+                        <p>Food service industry-specific consultancy & systems</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h4>ERP Module Integration</h4>
+                        <p>Seamless ERP integration for streamlined operations</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-chart-line"></i> Financial Consultancy</h3>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4>Financial Planning & Analysis</h4>
+                        <p>Strategic financial planning for sustainable growth</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Business Risk Management</h4>
+                        <p>Comprehensive risk assessment and mitigation strategies</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h4>Budgeting & Forecasting</h4>
+                        <p>Accurate budget planning and financial forecasting</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h4>Cashflow Planning</h4>
+                        <p>Optimal cashflow management and planning strategies</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-search"></i> Internal Audit</h3>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>Internal Control Reviews</h4>
+                        <p>Comprehensive evaluation of internal control systems</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h4>Fraud Detection & Prevention</h4>
+                        <p>Advanced fraud detection and prevention mechanisms</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-list-check"></i>
+                        </div>
+                        <h4>SOP Workflow Review</h4>
+                        <p>Standard Operating Procedures optimization and review</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <h2 class="section-title">Our Expertise</h2>
+            
+            <div class="expertise-grid">
+                <div class="expertise-column">
+                    <h3>Industry Focus</h3>
+                    <div class="expertise-list">
+                        <div class="expertise-item">
+                            <i class="fas fa-check"></i>
+                            <span>Commercial Sector</span>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-check"></i>
+                            <span>Hospitality Industry</span>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-check"></i>
+                            <span>Food Service</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expertise-column">
+                    <h3>Technology</h3>
+                    <div class="expertise-list">
+                        <div class="expertise-item">
+                            <i class="fas fa-check"></i>
+                            <span>ERP Systems</span>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-check"></i>
+                            <span>CRM Software</span>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-check"></i>
+                            <span>Cloud Solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expertise-column">
+                    <h3>Client Focus</h3>
+                    <div class="expertise-list">
+                        <div class="expertise-item">
+                            <i class="fas fa-check"></i>
+                            <span>Trust & Reliability</span>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-check"></i>
+                            <span>Long-term Partnerships</span>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-check"></i>
+                            <span>Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section - Original Drag/Swipe Carousel -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <h2 class="section-title">Our Partners</h2>
+            
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-3d">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="partner-item active">
+                            <img src="images/Elysian.png" alt="Elysian Group">
+                        </div>
+                        <div class="partner-item">
+                            <img src="images/Heritage.png" alt="Heritage Hotels">
+                        </div>
+                        <div class="partner-item">
+                            <img src="images/Leger.png" alt="Ledger Hotels">
+                        </div>
+                        <div class="partner-item">
+                            <img src="images/lepit.png" alt="Le Petit Village">
+                        </div>
+                        <div class="partner-item">
+                            <img src="images/maa.png" alt="MAA Hotel">
+                        </div>
+                        <div class="partner-item">
+                            <img src="images/Ngong.png" alt="Ngong Hills Hotel">
+                        </div>
+                        <div class="partner-item">
+                            <img src="images/seo.png" alt="Seo Hotel">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-indicators" id="indicators"></div>
+            </div>
+            <div class="swipe-hint"><i class="fas fa-hand-pointer"></i> Drag to navigate</div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Email Only -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Team Up?</h2>
+            <p class="contact-subtitle">Get in touch with us and we'll get back to you promptly</p>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <a href="mailto:info@sanelsystems.com">info@sanelsystems.com</a>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Service Areas</h4>
+                        <p>Kenya | Uganda | Tanzania | Ethiopia</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="firstName" 
+                            placeholder="First Name" 
+                            required
+                            class="form-input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="lastName" 
+                            placeholder="Last Name" 
+                            required
+                            class="form-input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="Email Address" 
+                            required
+                            class="form-input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <select id="service" class="form-input" required>
+                            <option value="">Select Service Interest</option>
+                            <option value="it-support">IT Support & Maintenance</option>
+                            <option value="systems-consultancy">Systems Consultancy</option>
+                            <option value="financial-consultancy">Financial Consultancy</option>
+                            <option value="internal-audit">Internal Audit</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea 
+                            id="message" 
+                            placeholder="Your Message" 
+                            required
+                            class="form-input"
+                            rows="4"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p class="form-note" id="formNote"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sanel Systems Limited</h4>
+                    <p>Comprehensive business solutions for East Africa</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sanel Systems Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// Sanel Systems - Enhanced Features with Dark/Light Theme
+
+document.addEventListener('DOMContentLoaded', function() {
+    initThemeToggle();
+    initMobileMenu();
+    initContactForm();
+    initSmoothScroll();
+    initScrollAnimations();
+    init3DCarousel();
+});
+
+// Theme Toggle
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Check for saved theme preference
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-theme');
+    }
+
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-theme');
+        
+        if (body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
+
+// Mobile Menu
+function initMobileMenu() {
+    const toggle = document.getElementById('mobileMenuToggle');
+    const menu = document.getElementById('navMenu');
+
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            menu.classList.toggle('active');
+        });
+
+        const links = menu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                menu.classList.remove('active');
+            });
+        });
+    }
+}
+
+// Contact Form
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value.trim();
+        const formNote = document.getElementById('formNote');
+
+        if (!firstName || !lastName || !email || !service || !message) {
+            formNote.textContent = 'Please fill in all required fields';
+            formNote.classList.remove('success');
+            formNote.style.color = '#ef4444';
+            formNote.style.display = 'block';
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            formNote.textContent = 'Please enter a valid email address';
+            formNote.classList.remove('success');
+            formNote.style.color = '#ef4444';
+            formNote.style.display = 'block';
+            return;
+        }
+
+        const formData = {
+            firstName,
+            lastName,
+            email,
+            service,
+            message,
+            timestamp: new Date().toISOString()
+        };
+
+        console.log('Form Data:', formData);
+
+        formNote.textContent = '✓ Message sent successfully! We will get back to you soon.';
+        formNote.classList.add('success');
+        formNote.style.color = '#10b981';
+        formNote.style.display = 'block';
+
+        form.reset();
+
+        setTimeout(() => {
+            formNote.style.display = 'none';
+        }, 5000);
+    });
+}
+
+// Smooth Scroll
+function initSmoothScroll() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+}
+
+// Scroll Animations
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    const cards = document.querySelectorAll('.service-card-compact, .service-card, .expertise-item, .stat-card, .vm-card, .location-card');
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+}
+
+// 3D Carousel - Original Drag/Swipe Version
+let currentIndex = 0;
+const totalItems = 7;
+const radius = 300;
+let isAutoRotating = true;
+let autoRotateTimer;
+
+function init3DCarousel() {
+    const items = document.querySelectorAll('.partner-item');
+    const track = document.getElementById('carouselTrack');
+    const container = document.getElementById('carouselContainer');
+    const indicatorsContainer = document.getElementById('indicators');
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
+    let dragStartIndex = 0;
+
+    // Create indicators
+    for (let i = 0; i < totalItems; i++) {
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator' + (i === 0 ? ' active' : '');
+        indicator.addEventListener('click', () => {
+            stopAutoRotate();
+            goToSlide(i);
+            startAutoRotate();
+        });
+        indicatorsContainer.appendChild(indicator);
+    }
+
+    function updateCarousel() {
+        items.forEach((item, index) => {
+            const angle = ((index - currentIndex) / totalItems) * 360;
+            const distance = radius;
+            
+            const x = Math.sin((angle * Math.PI) / 180) * distance;
+            const z = Math.cos((angle * Math.PI) / 180) * distance - 100;
+            const opacity = (Math.cos((angle * Math.PI) / 180) + 1) / 2;
+            const scale = opacity * 0.5 + 0.5;
+
+            item.style.transform = `
+                translateX(${x}px) 
+                translateZ(${z}px) 
+                scale(${scale})
+            `;
+            item.style.opacity = Math.max(0.3, opacity);
+            item.style.zIndex = Math.round(opacity * 1000);
+
+            if (index === currentIndex) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+
+        // Update indicators
+        document.querySelectorAll('.indicator').forEach((ind, idx) => {
+            ind.classList.toggle('active', idx === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+    }
+
+    window.goToSlide = function(index) {
+        currentIndex = index;
+        updateCarousel();
+    };
+
+    function startAutoRotate() {
+        if (isAutoRotating) {
+            autoRotateTimer = setInterval(nextSlide, 5000);
+        }
+    }
+
+    function stopAutoRotate() {
+        isAutoRotating = false;
+        clearInterval(autoRotateTimer);
+    }
+
+    // Touch events
+    container.addEventListener('touchstart', (e) => {
+        stopAutoRotate();
+        isDragging = true;
+        dragStartIndex = currentIndex;
+        touchStartX = e.touches[0].clientX;
+        items.forEach(item => item.classList.add('dragging'));
+    }, { passive: true });
+
+    container.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        touchEndX = e.touches[0].clientX;
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        items.forEach(item => item.classList.remove('dragging'));
+
+        const threshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        } else {
+            currentIndex = dragStartIndex;
+            updateCarousel();
+        }
+
+        startAutoRotate();
+    });
+
+    // Mouse drag events
+    container.addEventListener('mousedown', (e) => {
+        stopAutoRotate();
+        isDragging = true;
+        dragStartIndex = currentIndex;
+        touchStartX = e.clientX;
+        items.forEach(item => item.classList.add('dragging'));
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        touchEndX = e.clientX;
+    });
+
+    container.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        items.forEach(item => item.classList.remove('dragging'));
+
+        const threshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        } else {
+            currentIndex = dragStartIndex;
+            updateCarousel();
+        }
+
+        startAutoRotate();
+    });
+
+    container.addEventListener('mouseleave', () => {
+        if (isDragging) {
+            isDragging = false;
+            items.forEach(item => item.classList.remove('dragging'));
+            currentIndex = dragStartIndex;
+            updateCarousel();
+            startAutoRotate();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+            stopAutoRotate();
+            nextSlide();
+            startAutoRotate();
+        }
+        if (e.key === 'ArrowLeft') {
+            stopAutoRotate();
+            prevSlide();
+            startAutoRotate();
+        }
+    });
+
+    updateCarousel();
+    startAutoRotate();
+}
+
+// Active nav link on scroll
+window.addEventListener('scroll', function() {
+    let current = '';
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+console.log('Sanel Systems - Luxury Theme loaded successfully!');
+    </script>
+</body>
+</html>
