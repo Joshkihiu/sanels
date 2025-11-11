@@ -103,15 +103,15 @@ body {
     top: 0;
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-color);
-    z-index: 99;
+    z-index: 999; /* ⬅️ CHANGED: from 99 to 999 */
     box-shadow: 0 2px 8px var(--shadow);
     transition: var(--transition);
 }
 
 .dark-theme .navbar {
-    background: rgba(26, 26, 26, 0.95);
+    background: rgba(26, 26, 26, 0.98); /* ⬅️ CHANGED: from 0.95 to 0.98 */
     backdrop-filter: blur(10px);
-    border-bottom: none;
+    border-bottom: 1px solid var(--dark-border); /* ⬅️ CHANGED: from none to border */
 }
 
 .nav-wrapper {
@@ -119,18 +119,29 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0.6rem 0;
+    flex-wrap: nowrap; /* ⬅️ ADDED: prevents wrapping */
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    z-index: 1000; /* ⬅️ ADDED: ensures logo stays on top */
+    flex-shrink: 0; /* ⬅️ ADDED: prevents logo from shrinking */
+}
+
+.logo h1 {
+    font-size: 1.2rem; /* ⬅️ ADDED: explicit font size */
+    font-weight: 700; /* ⬅️ ADDED: font weight */
+    color: var(--text-primary); /* ⬅️ ADDED: text color */
+    white-space: nowrap; /* ⬅️ ADDED: prevents text wrapping */
 }
 
 .logo-image {
     width: 32px;
     height: 32px;
     object-fit: contain;
+    flex-shrink: 0; /* ⬅️ ADDED: prevents image from shrinking */
 }
 
 .logo-light {
@@ -149,12 +160,11 @@ body {
     display: block;
 }
 
-
-
 .nav-right {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    flex-shrink: 0; /* ⬅️ ADDED: prevents nav-right from shrinking */
 }
 
 .nav-menu {
@@ -197,6 +207,73 @@ body {
 
 .nav-menu a:hover::after {
     width: 100%;
+}
+
+/* Theme Toggle in Header */
+.theme-toggle-header {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0; /* ⬅️ ADDED: prevents theme toggle from shrinking */
+}
+
+.theme-toggle-header:hover {
+    transform: scale(1.05);
+}
+
+.dark-theme .theme-toggle-header {
+    background: var(--dark-bg-card);
+    border-color: var(--gold);
+}
+
+.theme-icon {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.dark-theme .theme-icon {
+    color: var(--gold);
+}
+
+.theme-toggle-header .sun-icon {
+    display: none;
+}
+
+.theme-toggle-header .moon-icon {
+    display: block;
+}
+
+.dark-theme .theme-toggle-header .sun-icon {
+    display: block;
+}
+
+.dark-theme .theme-toggle-header .moon-icon {
+    display: none;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 3px;
+    flex-shrink: 0; /* ⬅️ ADDED: prevents menu toggle from shrinking */
+}
+
+.mobile-menu-toggle span {
+    width: 20px;
+    height: 2.5px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition);
 }
 
 /* Theme Toggle in Header */
